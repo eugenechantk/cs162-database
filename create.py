@@ -48,7 +48,7 @@ class Listing(Base):
     listing_month = Column(Integer)
     listing_agent = Column(Integer, ForeignKey('agent.agentid'))
     listing_office = Column(Integer, ForeignKey('office.officeid'))
-    sold = Column(Integer, default=0)
+    sold = Column(Boolean, default=False)
     sales = relationship("Sale")
 
     def __repr__(self):

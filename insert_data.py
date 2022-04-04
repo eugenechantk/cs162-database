@@ -62,7 +62,7 @@ def add_sales(buyer, listing, price, date_list, month, agent):
         sale = Sale(buyerid=buyer,listingid=listing,sales_price=price,sales_date=date(date_list[0],date_list[1],date_list[2]), sales_month = month, agentid=agent)
         session.add(sale)
         sale_listing = session.query(Listing).get(listing)
-        sale_listing.sold = 1
+        sale_listing.sold = True
         session.commit()
     except:
         session.rollback()
