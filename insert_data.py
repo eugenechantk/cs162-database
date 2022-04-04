@@ -8,8 +8,11 @@ session = Session()
 
 # insert initial data for office, real estate agent, listings and buyers information
 offices = [
-    Office(officename = 'East Village'),
-    Office(officename = 'Upper East Side')
+    Office(officename = 'East Village 1'),
+    Office(officename = 'Upper East Side 1'),
+    Office(officename = 'East Village 2'),
+    Office(officename = 'Upper East Side 2'),
+    Office(officename = 'Upper East Side 3'),
 ]
 
 agents = [
@@ -17,6 +20,12 @@ agents = [
     Agent(officeid=1,firstname = 'Thomas',lastname='Davidson',phone='213-76334877',email='thomas@realestate.com'),
     Agent(officeid=1,firstname = 'Allison',lastname='Chung',phone='763-5231455',email='achung@realestate.com'),
     Agent(officeid=2,firstname = 'Albert',lastname='Saul',phone='623-5122731',email='albert.saul@realestate.com'),
+    Agent(officeid=3,firstname = 'Sally',lastname='Chung',phone='512-5436172',email='sally@realestate.com'),
+    Agent(officeid=4,firstname = 'Newman',lastname='Jefferson',phone='723-6537122',email='newman.jefferson@realestate.com'),
+    Agent(officeid=5,firstname = 'Taylor',lastname='Lee',phone='623-5122731',email='taylor@realestate.com'),
+    Agent(officeid=3,firstname = 'Olivia',lastname='Sherman',phone='623-5122731',email='olvia@realestate.com'),
+    Agent(officeid=4,firstname = 'Philip',lastname='Patovi',phone='567-7123455',email='philip@realestate.com'),
+    Agent(officeid=5,firstname = 'Freddy',lastname='Summers',phone='831-4567122',email='fsummers@realestate.com'),
 ]
 
 eastVillageListings = [
@@ -72,12 +81,16 @@ def add_sales(buyer, listing, price, date_list, month, agent):
 add_sales(1,1,180000.00,(2022,3,12),202203,3)
 add_sales(2,2,250000.00,(2022,3,28),202203,3)
 add_sales(3,3,900000.00,(2022,3,15),202203,2)
-add_sales(4,4,300000.00,(2022,3,3),202203,3)
-add_sales(2,6,1200000.00,(2022,2,28),202202,2)
-add_sales(3,7,600000.00,(2022,2,14),202202,3)
-add_sales(1,9,750000.00,(2022,2,12),202202,4)
-add_sales(4,10,1800000.00,(2022,2,10),202202,4)
-add_sales(3,11,2500000.00,(2022,2,5),202202,1)
-add_sales(2,13,450000.00,(2022,1,15),202201,4)
+add_sales(4,4,300000.00,(2022,3,3),202203,5)
+add_sales(2,6,1200000.00,(2022,3,28),202203,2)
+add_sales(3,7,600000.00,(2022,3,14),202203,8)
+add_sales(2,8,400000.00,(2022,3,14),202203,5)
+add_sales(1,9,750000.00,(2022,3,12),202203,4)
+add_sales(4,10,1800000.00,(2022,3,10),202203,4)
+add_sales(3,11,2500000.00,(2022,3,5),202203,1)
+add_sales(2,13,450000.00,(2022,3,15),202203,7)
+add_sales(4,14,1800000.00,(2022,3,12),202203,6)
+add_sales(4,15,20000000.00,(2022,3,10),202203,10)
+add_sales(1,12,1250000.00,(2022,3,8),202203,9)
 
 
