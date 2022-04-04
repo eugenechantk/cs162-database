@@ -47,7 +47,7 @@ class Listing(Base):
     listing_month = Column(Integer)
     listing_agent = Column(Integer, ForeignKey('agent.agentid'))
     listing_office = Column(Integer, ForeignKey('office.officeid'))
-    sold = Column(Boolean, default=False)
+    sold = Column(Integer, default=0)
 
     def __repr__(self):
         return "<Listing(ID={}, Name={}, Listing Price={}, Listing Date={}, Listing Agent={}, Listing Office={})>".format(self.listingid, self.listingname, self.listing_price, self.listing_date, self.listing_agent, self.listing_office)
@@ -61,6 +61,7 @@ class Sale(Base):
     sales_date = Column(Date)
     sales_month = Column(Integer)
     agentid = Column(Integer, ForeignKey('agent.agentid'))
+    comission = Column(Float)
 
 class Buyer(Base):
     __tablename__ = 'buyer'
