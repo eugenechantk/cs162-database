@@ -13,10 +13,10 @@ offices = [
 ]
 
 agents = [
-    Agent(firstname = 'Jenny',lastname='Smith',phone='415-2134455',email='jenny.smith@realestate.com'),
-    Agent(firstname = 'Thomas',lastname='Davidson',phone='213-76334877',email='thomas@realestate.com'),
-    Agent(firstname = 'Allison',lastname='Chung',phone='763-5231455',email='achung@realestate.com'),
-    Agent(firstname = 'Albert',lastname='Saul',phone='623-5122731',email='albert.saul@realestate.com'),
+    Agent(officeid=2,firstname = 'Jenny',lastname='Smith',phone='415-2134455',email='jenny.smith@realestate.com'),
+    Agent(officeid=1,firstname = 'Thomas',lastname='Davidson',phone='213-76334877',email='thomas@realestate.com'),
+    Agent(officeid=1,firstname = 'Allison',lastname='Chung',phone='763-5231455',email='achung@realestate.com'),
+    Agent(officeid=2,firstname = 'Albert',lastname='Saul',phone='623-5122731',email='albert.saul@realestate.com'),
 ]
 
 eastVillageListings = [
@@ -70,5 +70,6 @@ def add_sales(buyer, listing, price, date_list, month, agent):
         session.close()
 
 add_sales(1,1,200000,(2022,3,28),202203,1)
+add_sales(2,4,350000,(2022,3,15),202203,2)
 
 

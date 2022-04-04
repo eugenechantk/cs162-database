@@ -16,6 +16,7 @@ class Office(Base):
     officeid = Column(Integer, primary_key=True)
     officename = Column(Text)
     listings = relationship("Listing")
+    agents = relationship("Agent")
 
     def __repr__(self):
         return "<Office(ID={}, Office Name={})>".format(self.officeid, self.officename)
@@ -24,6 +25,7 @@ class Office(Base):
 class Agent(Base):
     __tablename__ = 'agent'
     agentid = Column(Integer, primary_key=True)
+    officeid = Column(Integer,ForeignKey('office.officeid'))
     firstname = Column(Text)
     lastname = Column(Text)
     phone = Column(Text)
