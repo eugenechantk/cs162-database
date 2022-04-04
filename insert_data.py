@@ -31,8 +31,8 @@ eastVillageListings = [
 ]
 
 uesListings = [
-    Listing(listingname='3 bedroom with nice city views', bedroom_no=3, bathroom_no=1, address='345 East 93rd Street, New York', zipcode='10128', listing_price=65900.00, listing_date=date(2022,2,10), listing_month=202202, listing_agent=1, listing_office=2),
-    Listing(listingname='Luxurious condo in Upper East Side', bedroom_no=4, bathroom_no=2, address='340 East 80th Street, New York', zipcode='10075', listing_price=169500.00, listing_date=date(2022,2,28), listing_month=202202, listing_agent=4, listing_office=2),
+    Listing(listingname='3 bedroom with nice city views', bedroom_no=3, bathroom_no=1, address='345 East 93rd Street, New York', zipcode='10128', listing_price=659000.00, listing_date=date(2022,2,10), listing_month=202202, listing_agent=1, listing_office=2),
+    Listing(listingname='Luxurious condo in Upper East Side', bedroom_no=4, bathroom_no=2, address='340 East 80th Street, New York', zipcode='10075', listing_price=1695000.00, listing_date=date(2022,2,28), listing_month=202202, listing_agent=4, listing_office=2),
     Listing(listingname='Luxurious condo in Park Avenue', bedroom_no=5, bathroom_no=3, address='925 Park Avenue, New York', zipcode='10028', listing_price=3300000.00, listing_date=date(2022,3,15), listing_month=202203, listing_agent=4, listing_office=2),
     Listing(listingname='Family-friendly apartment in Upper East Side', bedroom_no=5, bathroom_no=2, address='8 East 83rd Street, New York', zipcode='10028', listing_price=1695000.00, listing_date=date(2022,3,20), listing_month=202203, listing_agent=1, listing_office=2),
     Listing(listingname='Affordable 3 bedroom apartment for young people', bedroom_no=3, bathroom_no=1, address='448 East 84th Street, New York', zipcode='10028', listing_price=425000.00, listing_date=date(2022,1,15), listing_month=202201, listing_agent=4, listing_office=2),
@@ -69,7 +69,15 @@ def add_sales(buyer, listing, price, date_list, month, agent):
     finally:
         session.close()
 
-add_sales(1,1,200000,(2022,3,28),202203,1)
-add_sales(2,4,350000,(2022,3,15),202203,2)
+add_sales(1,1,180000.00,(2022,3,12),202203,3)
+add_sales(2,2,250000.00,(2022,3,28),202203,3)
+add_sales(3,3,900000.00,(2022,3,15),202203,2)
+add_sales(4,4,300000.00,(2022,3,3),202203,3)
+add_sales(2,6,1200000.00,(2022,2,28),202202,2)
+add_sales(3,7,600000.00,(2022,2,14),202202,3)
+add_sales(1,9,750000.00,(2022,2,12),202202,4)
+add_sales(4,10,1800000.00,(2022,2,10),202202,4)
+add_sales(3,11,2500000.00,(2022,2,5),202202,1)
+add_sales(2,13,450000.00,(2022,1,15),202201,4)
 
 
