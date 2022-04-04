@@ -1,4 +1,3 @@
-from email.policy import default
 import sqlalchemy
 from sqlalchemy import create_engine, Column, Text, Integer, ForeignKey, Date, Float, Boolean
 from sqlalchemy.ext.declarative import declarative_base
