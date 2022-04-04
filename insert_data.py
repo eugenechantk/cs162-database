@@ -48,7 +48,6 @@ buyers = [
     Buyer(firstname='George',lastname='Peters',email='george.peters@gmail.com',phone='719-5234612'),
 ]
 
-
 session.add_all(offices)
 session.add_all(agents)
 session.add_all(eastVillageListings)

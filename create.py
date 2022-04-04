@@ -63,6 +63,7 @@ class Buyer(Base):
     phone = Column(Text)
     sales = relationship("Sale")
 
+# provide a utility function to calculate the comission
 def calc_comission(context):
     sales_price = context.get_current_parameters()['sales_price']
     if sales_price < 100000.00:
@@ -84,7 +85,7 @@ class Sale(Base):
     sales_date = Column(Date)
     sales_month = Column(Integer)
     agentid = Column(Integer, ForeignKey('agent.agentid'))
-    comission = Column(Float, default=calc_comission, onupdate=calc_comission)
+    comission = Column(Float, default=calc_comission, onupdate=calc_comission) # utilize default and onupdate to insert and update comission data based on sales price
 
 # create all the tables defined above 
 Base.metadata.create_all(bind=engine)
