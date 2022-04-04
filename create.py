@@ -3,9 +3,12 @@ from sqlalchemy import create_engine, Column, Text, Integer, ForeignKey, Date, F
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
+# establish connection to the database
+# if database does not exist, create a new one
 engine = create_engine('sqlite:///realestate.db')
 engine.connect()
 
+# provide the base for declarative method to create tables
 Base = declarative_base()
 
 class Office(Base):
@@ -67,4 +70,5 @@ class Buyer(Base):
     email = Column(Text)
     phone = Column(Text)
 
+# create all the tables defined above 
 Base.metadata.create_all(bind=engine)
