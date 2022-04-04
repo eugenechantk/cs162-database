@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 
 # establish connection to the database
 # if database does not exist, create a new one
-engine = create_engine('sqlite:///realestate.db', echo=True)
+engine = create_engine('sqlite:///realestate.db')
 engine.connect()
 
 # provide the base for declarative method to create tables
@@ -88,6 +88,14 @@ class Sale(Base):
     sales_month = Column(Integer)
     agentid = Column(Integer, ForeignKey('agent.agentid'))
     comission = Column(Float, default=calc_comission, onupdate=calc_comission) # utilize default and onupdate to insert and update comission data based on sales price
+
+class Commission(Base):
+    __tablename__ = 'commission'
+    commissionid = Column(Integer, primary_key=True)
+    agentid = Column(Integer, ForeignKey('agent.agentid'))
+    commission = Column(Float)
+    commission_month = Column(Integer)
+
 
 # create all the tables defined above 
 Base.metadata.create_all(bind=engine)
