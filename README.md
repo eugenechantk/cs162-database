@@ -1,4 +1,8 @@
 # Real Estate Head Office Database
+### Eugene Chan
+### CS162 - Spring 2022
+-----
+
 ## Running the database
 ```
 python3.6 -m venv venv
