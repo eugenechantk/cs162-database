@@ -14,3 +14,6 @@ python3 query_data.py
 I have implemented data normalization to make sure data is not redundant and is not dependent through complex relationships.  
 In the implementation of queries, I utilized indexes to speed up SQL operations. It resulted in faster runtime (i.e. when running the first query, the time got shorten by 17% -- can check by commenting out the Index commands).  
 To reflect a sales in the database, because we need to update multiple tables, to maintain integrity of the database, I implemented a function that essentially wraps the SQL commands into a transaction, with rollback to ensure that we can revert if the transaction is faulty.  
+
+## Link to code (Github)
+https://github.com/eugenechantk/cs162-database
