@@ -5,7 +5,8 @@ from sqlalchemy.orm import relationship, sessionmaker
 
 # establish connection to the database
 # if database does not exist, create a new one
-engine = create_engine('sqlite:///realestate.db')
+# echo=True to see the SQL commands and run time
+engine = create_engine('sqlite:///realestate.db', echo=True)
 engine.connect()
 
 # provide the base for declarative method to create tables
