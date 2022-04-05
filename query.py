@@ -15,8 +15,8 @@ def print_result(results):
 report_month = 202203 # specifying the month to build the report
 
 # Q1. find top 5 offices with the most sales for that month
-Index('idx_agent_to_price',Sale.agentid, Sale.sales_price)
-Index('idx_agent_to_office',Agent.agentid,Agent.officeid)
+Index('idx_agent_to_price',Sale.agentid, Sale.sales_price) # composite index to facilitate grouping sales price by agent
+Index('idx_agent_to_office',Agent.agentid,Agent.officeid) # composite index to facilitate grouping office by agent
 top_office_sales = session.query(
     Office.officename,
     func.sum(Sale.sales_price)
@@ -49,7 +49,7 @@ print_result(top_agent)
 print('==========================\n')
 
 # Q3a. calculate commission for each agent and store in separate table
-Index('idx_agent_sales',Sale.agentid)
+Index('idx_agent_sales',Sale.agentid) # Index to facilitate group by agent
 commission = session.query(
     Sale.agentid,
     func.sum(Sale.comission),
@@ -60,7 +60,7 @@ i = insert(Commission).from_select(['agentid','commission','commission_month'],s
 # session.execute(i)
 # session.commit()
 
-Index('idx_agent_agent', Agent.agentid)
+Index('idx_agent_agent', Agent.agentid) # Index to facilitate joining agent for the query on Commission table below
 commission_by_agent = session.query(
     Agent.firstname,
     Agent.lastname,
