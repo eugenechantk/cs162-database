@@ -57,8 +57,8 @@ commission = session.query(
 ).filter(Sale.sales_month==report_month).group_by(Sale.agentid)
 
 i = insert(Commission).from_select(['agentid','commission','commission_month'],select=commission)
-# session.execute(i)
-# session.commit()
+session.execute(i)
+session.commit()
 
 Index('idx_agent_agent', Agent.agentid) # Index to facilitate joining agent for the query on Commission table below
 commission_by_agent = session.query(
