@@ -99,3 +99,18 @@ class Commission(Base):
 
 # create all the tables defined above 
 Base.metadata.create_all(bind=engine)
+
+'''
+Data Normalization Check
+1NF:
+- Each attribute in each table only takes in 1 value, and their domains don't change
+- Each attribute has a unique name within the table scope
+- The order in which data is stored does not matter
+
+2NF:
+- All other attributes in each table is dependent on the primary key (i.e. the ids)
+
+3NF
+- There is no non-primary-key attribute that depends beyond the primary key of its own table, therefore no transitive dependencies
+- e.g. lastname of agent is not dependent on firstname of agent, just agentid of agent
+'''
